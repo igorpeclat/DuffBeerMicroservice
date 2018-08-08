@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.duff.client.entity.Beer;
+import com.duff.client.exception.BeerNotFoundException;
 import com.duff.client.presenter.BeerPresenter;
 import com.duff.client.presenter.Playlist;
 import com.duff.client.repository.BeerRepository;
@@ -33,7 +34,7 @@ public class BeerService implements IBeerService {
 	@Override
 	public List<BeerPresenter> getPlaylistBeers(Integer temperature) {
 
-		List<Beer> beers = Lists.newArrayList(beerRepository.findAll());
+		List<Beer> beers = beerRepository.findAllByOrderByStyleAsc().orElseThrow(() -> new BeerNotFoundException());
 		//Discover the average value between the temperatures of the beers
 		beers.forEach(beer -> {
 			beer.setAverageTemperature(
@@ -41,7 +42,7 @@ public class BeerService implements IBeerService {
 		});
 
 		 
-		return spotifyService.beersPresenterPlaylist(
+		return spotifyService.findPlaylistByBeerNameStyle(
 				beers.stream()
 				.filter(e -> e.getAverageTemperature().equals(beers.stream()
 				.map(Beer::getAverageTemperature)

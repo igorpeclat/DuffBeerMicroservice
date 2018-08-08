@@ -1,6 +1,7 @@
 package com.duff.client.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -57,8 +58,7 @@ public class DuffController {
 	@PutMapping
 	public ResponseEntity<?> update(@RequestBody Beer beer) {
 		beer = validateStyleExists(beer.getStyle());
-		URI location = buildURI(beer);
-		return ResponseEntity.created(location).build();
+		return ResponseEntity.noContent().build();
 	}
 	
 	/**
@@ -80,8 +80,18 @@ public class DuffController {
 	 * @return the response entity
 	 */
 	@GetMapping("{style}")
-	public ResponseEntity<?> get(@PathVariable("style") String style) {
+	public ResponseEntity<?> find(@PathVariable("style") String style) {
 		return ResponseEntity.ok(validateStyleExists(style));
+	}
+	
+	/**
+	 * Find all.
+	 *
+	 * @return the response entity
+	 */
+	@GetMapping
+	public ResponseEntity<?> findAll() {
+		return ResponseEntity.ok(validateFindAll());
 	}
 	
 	/**
@@ -119,6 +129,17 @@ public class DuffController {
 		return this.beerRepository
 			.findByStyle(style)
 			.orElseThrow(() -> new BeerNotFoundException(style));
+	}
+	
+	/**
+	 * Verify the {@literal style} exists.
+	 *
+	 * @param style
+	 */
+	private List<Beer> validateFindAll() {
+		return this.beerRepository
+			.findAllByOrderByStyleAsc()
+			.orElseThrow(() -> new BeerNotFoundException());
 	}
 	
 	/**

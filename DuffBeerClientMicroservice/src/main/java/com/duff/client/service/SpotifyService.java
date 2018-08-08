@@ -30,37 +30,26 @@ import com.wrapper.spotify.requests.data.search.simplified.SearchPlaylistsReques
 @Service
 public class SpotifyService implements ISpotifyService {
 
+	/** The spotify param. */
 	@Autowired
 	private SpotifyParam spotifyParam;
 	
-	/** The spotify api. */
-	private SpotifyApi spotifyApi;
 	
-	/**
-	 * Inits the SpotifyApi.
-	 */
-	@PostConstruct
-    protected void init() {
-		spotifyApi = SpotifyAbstractService.getSpotifyApi(spotifyParam.getClientId(), spotifyParam.getClientSecret());
-    }
-	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.duff.client.service.ISpotifyService#playlistLookup(java.lang.String)
+	/* (non-Javadoc)
+	 * @see com.duff.client.service.ISpotifyService#findPlaylistByName(java.lang.String)
 	 */
 	@Override
-	public Playlist playlistLookup(String name) {
+	public Playlist findPlaylistByName(String name) {
 		Playlist playlist = new Playlist();
 		try {
-			final SearchPlaylistsRequest searchPlaylistsRequest = spotifyApi.searchPlaylists(name)
+			final SearchPlaylistsRequest searchPlaylistsRequest = spotifyApi().searchPlaylists(name)
 					.market(CountryCode.BR).limit(1).offset(0).build();
 
 			final PlaylistSimplified[] playlistSimplified = searchPlaylistsRequest.execute().getItems();
 			PlaylistSimplified play = Lists.newArrayList(playlistSimplified).get(0);
 			playlist.setName(play.getName());
 
-			final GetPlaylistRequest getPlaylistRequest = spotifyApi.getPlaylist(play.getOwner().getId(), play.getId())
+			final GetPlaylistRequest getPlaylistRequest = spotifyApi().getPlaylist(play.getOwner().getId(), play.getId())
 					.market(CountryCode.BR).build();
 			final com.wrapper.spotify.model_objects.specification.Playlist playlistSpotify = getPlaylistRequest
 					.execute();
@@ -89,18 +78,27 @@ public class SpotifyService implements ISpotifyService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.duff.client.service.ISpotifyService#playlistLookups(java.util.List)
+	 * @see com.duff.client.service.ISpotifyService#findPlaylistByBeerNameStyle(java.util.List)
 	 */
 	@Override
-	public List<BeerPresenter> beersPresenterPlaylist(List<String> name) {
+	public List<BeerPresenter> findPlaylistByBeerNameStyle(List<String> name) {
 		List<BeerPresenter> beerPresenters =  new ArrayList<>();
 		name.stream().forEach(nm ->{
 			BeerPresenter beerPresenter =  new BeerPresenter();
 			beerPresenter.setBeerStyle(nm);
-			beerPresenter.setPlaylist(playlistLookup(nm));
+			beerPresenter.setPlaylist(findPlaylistByName(nm));
 			beerPresenters.add(beerPresenter);
 		});
 		return beerPresenters;
+	}
+	
+	/**
+	 * Spotify api.
+	 *
+	 * @return the spotify api
+	 */
+	private SpotifyApi spotifyApi() {
+		return SpotifyAbstractService.getSpotifyApiAccess(spotifyParam);
 	}
 	
 

@@ -17,7 +17,7 @@ public interface ISpotifyService {
 	 * @param name the name
 	 * @return the playlist
 	 */
-	Playlist playlistLookup(String name);
+	Playlist findPlaylistByName(String name);
 
 	/**
 	 * Beers playlist.
@@ -25,6 +25,6 @@ public interface ISpotifyService {
 	 * @param name the name
 	 * @return the list
 	 */
-	List<BeerPresenter> beersPresenterPlaylist(List<String> name);
+	List<BeerPresenter> findPlaylistByBeerNameStyle(List<String> name);
 
 }

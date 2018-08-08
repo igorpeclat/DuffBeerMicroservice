@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.158s</div>
+<div class="counter">1.535s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">searchPlayList</td>
-<td>1.153s</td>
+<td>1.296s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">validateLogin</td>
-<td>0.005s</td>
+<td>0.239s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,12 +92,64 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2018-08-07 21:10:23.414  INFO 21217 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.duff.client.service.test.SpotifyTests], using SpringBootContextLoader
-2018-08-07 21:10:23.415  INFO 21217 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.duff.client.service.test.SpotifyTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-2018-08-07 21:10:23.416  INFO 21217 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duff.client.service.test.SpotifyTests]: SpotifyTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2018-08-07 21:10:23.429  INFO 21217 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duff.client.DuffBeerClientMicroserviceApplication for test class com.duff.client.service.test.SpotifyTests
-2018-08-07 21:10:23.431  INFO 21217 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2018-08-07 21:10:23.432  INFO 21217 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@ae7eec2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@20a74ab5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49552916, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5aeb1d9c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fcf69fd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@75277453, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@155afe78, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@17df06b2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@34b1535, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4d806ce3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@febe215, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@606e9fcc]
+<pre>2018-08-08 17:02:26.130  INFO 27140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.duff.client.service.test.SpotifyTests], using SpringBootContextLoader
+2018-08-08 17:02:26.131  INFO 27140 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.duff.client.service.test.SpotifyTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-08-08 17:02:26.132  INFO 27140 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.duff.client.service.test.SpotifyTests]: SpotifyTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-08-08 17:02:26.144  INFO 27140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.duff.client.DuffBeerClientMicroserviceApplication for test class com.duff.client.service.test.SpotifyTests
+2018-08-08 17:02:26.147  INFO 27140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-08-08 17:02:26.148  INFO 27140 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c28bfa2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6675a8c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1c75ef8b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a2d20e9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d14fa1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3fded66d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@ce46faa, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4f0d2cb7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@46a8deb0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@f0c15b6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@20bab2c2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6744af6]
+2018-08-08 17:02:26.260  INFO 27140 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3ad51f34: startup date [Wed Aug 08 17:02:26 BRT 2018]; root of context hierarchy
+2018-08-08 17:02:26.285  INFO 27140 --- [    Test worker] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-08-08 17:02:26.312  INFO 27140 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$942d2882] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-08 17:02:26.424 ERROR 27140 --- [    Test worker] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: .=info for '0'
+2018-08-08 17:02:26.425 ERROR 27140 --- [    Test worker] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: com.memorynotfound=debug for '1'
+2018-08-08 17:02:26.425 ERROR 27140 --- [    Test worker] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: org.springframework=info for '2'
+  _____             __    __      _____                         _               
+ |  __ \           / _|  / _|    / ____|                       (_)              
+ | |  | |  _   _  | |_  | |_    | (___     ___   _ __  __   __  _    ___    ___ 
+ | |  | | | | | | |  _| |  _|    \___ \   / _ \ | '__| \ \ / / | |  / __|  / _ \
+ | |__| | | |_| | | |   | |      ____) | |  __/ | |     \ V /  | | | (__  |  __/
+ |_____/   \__,_| |_|   |_|     |_____/   \___| |_|      \_/   |_|  \___|  \___|
+                                                                                
+2018-08-08 17:02:26.432  INFO 27140 --- [    Test worker] c.duff.client.service.test.SpotifyTests  : No active profile set, falling back to default profiles: default
+2018-08-08 17:02:26.435  INFO 27140 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5d7f0c1e: startup date [Wed Aug 08 17:02:26 BRT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3ad51f34
+2018-08-08 17:02:26.944  INFO 27140 --- [    Test worker] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'dataSource' with a different definition: replacing [Root bean: class [null]; scope=refresh; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=false; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]] with [Root bean: class [org.springframework.aop.scope.ScopedProxyFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in BeanDefinition defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]]
+2018-08-08 17:02:27.001  INFO 27140 --- [    Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8862c32a-7586-3ac9-9ea6-63b0909db85d
+2018-08-08 17:02:27.051  INFO 27140 --- [    Test worker] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-08-08 17:02:27.155  INFO 27140 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$78132585] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-08 17:02:27.192  INFO 27140 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$942d2882] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-08 17:02:27.446  INFO 27140 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2018-08-08 17:02:27.451  INFO 27140 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2018-08-08 17:02:27.478  INFO 27140 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-08 17:02:27.478  INFO 27140 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-08-08 17:02:27.487  INFO 27140 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-08-08 17:02:27.566  INFO 27140 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-08 17:02:27.618  INFO 27140 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/home/igor/Documents/workspace_leroy/DuffBeerMicroservice/DuffBeerClientMicroservice/build/resources/main/data.sql]
+2018-08-08 17:02:27.619  INFO 27140 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/home/igor/Documents/workspace_leroy/DuffBeerMicroservice/DuffBeerClientMicroservice/build/resources/main/data.sql] in 0 ms.
+2018-08-08 17:02:27.858  WARN 27140 --- [    Test worker] o.s.c.n.a.ArchaiusAutoConfiguration      : Netflix ConfigurationManager has already been installed, unable to re-install
+2018-08-08 17:02:27.935  INFO 27140 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-08 17:02:28.175  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@5d7f0c1e: startup date [Wed Aug 08 17:02:26 BRT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3ad51f34
+2018-08-08 17:02:28.187  WARN 27140 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-08-08 17:02:28.273  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.findAll()
+2018-08-08 17:02:28.274  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer/temperature],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.getBeerByAverageTemperature(com.duff.client.param.DuffBeerTemperatureParam)
+2018-08-08 17:02:28.275  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer],methods=[PUT]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.update(com.duff.client.entity.Beer)
+2018-08-08 17:02:28.276  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer/{style}],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.find(java.lang.String)
+2018-08-08 17:02:28.276  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer/{style}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.delete(java.lang.String)
+2018-08-08 17:02:28.277  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/beer],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; com.duff.client.controller.DuffController.save(com.duff.client.entity.Beer)
+2018-08-08 17:02:28.280  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-08 17:02:28.282  INFO 27140 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-08 17:02:28.321  INFO 27140 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-08 17:02:28.322  INFO 27140 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-08 17:02:29.163  INFO 27140 --- [    Test worker] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.web.context.support.GenericWebApplicationContext@5d7f0c1e: startup date [Wed Aug 08 17:02:26 BRT 2018]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@3ad51f34] and template loader path [classpath:/templates/]
+2018-08-08 17:02:29.163  INFO 27140 --- [    Test worker] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-08-08 17:02:29.422  INFO 27140 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-08-08 17:02:29.434  INFO 27140 --- [    Test worker] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped &quot;{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map&lt;java.lang.String, java.lang.String&gt;)
+2018-08-08 17:02:29.435  INFO 27140 --- [    Test worker] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped &quot;{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map&lt;java.lang.String, java.lang.String&gt;)
+2018-08-08 17:02:29.436  INFO 27140 --- [    Test worker] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped &quot;{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}&quot; onto protected java.util.Map&lt;java.lang.String, java.util.Map&lt;java.lang.String, org.springframework.boot.actuate.endpoint.web.Link&gt;&gt; org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-08 17:02:29.510  INFO 27140 --- [    Test worker] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2018-08-08 17:02:29.532  INFO 27140 --- [    Test worker] c.duff.client.service.test.SpotifyTests  : Started SpotifyTests in 3.374 seconds (JVM running for 19.735)
 </pre>
 </span>
 </div>
@@ -109,7 +161,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.3.1</a> at Aug 7, 2018 9:10:25 PM</p>
+<a href="http://www.gradle.org">Gradle 4.3.1</a> at Aug 8, 2018 5:02:31 PM</p>
 </div>
 </div>
 </body>
