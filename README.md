@@ -1,8 +1,11 @@
 # DuffBeerMicroservice
 Beer Selection and Spotify Playlist
 
-## How-to Build
+Pre-requisites
+Latest Gradle:
 https://gradle.org/install/
+
+## How-to Build
 
 ### 1. Initialize DuffBeerServiceRegistry
 ```gradle clean build```
