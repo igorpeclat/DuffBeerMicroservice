@@ -1,7 +1,7 @@
 # DuffBeerMicroservice
 Beer Selection and Spotify Playlist
 
-Pre-requisites
+## Pre-requisites
 Latest Gradle:
 https://gradle.org/install/
 
